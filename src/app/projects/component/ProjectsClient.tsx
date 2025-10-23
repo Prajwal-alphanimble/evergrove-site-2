@@ -163,7 +163,7 @@ export default function ProjectsClient({
               <div className="bg-card rounded-2xl p-2 shadow-lg">
                 <button
                   onClick={() => setActiveTab("layouts")}
-                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2${
+                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2 ${
                     activeTab === "layouts"
                       ? "bg-primary text-white shadow-lg"
                       : "text-muted-foreground hover:text-foreground"
