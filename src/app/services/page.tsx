@@ -100,7 +100,7 @@ function ServicesContent() {
                   <ServiceCard
                     title="Conceptual Design and Master Planning"
                     description="We create compelling design concepts and master plans for plotted developments, ensuring that the layout, spatial distribution, and design elements align with the client's vision and the surrounding environment."
-                    imageUrl="/Renders/Master_plan/Eternia/Master_plan/1.jpg"
+                    imageUrl="/services/001 architecture and interior design/001 conceptual design and master planning/file_2025-08-23_06.03.41.png"
 
                     index={0}
                     detailedContent={{
@@ -120,7 +120,7 @@ function ServicesContent() {
                   <ServiceCard
                     title="Residential and Commercial Architecture"
                     description="We design residential homes, townhouses, apartments, and commercial buildings, blending aesthetics with functionality. Each design is thoughtfully crafted to enhance user experience while optimizing space and light."
-                    imageUrl="/Renders/Entrance_Arch/Ernika/1.png"
+                    imageUrl="/services/001 architecture and interior design/002 residential and commercial architecture/Ashutosh_5.png"
                     
                     index={1}
                     detailedContent={{
@@ -140,7 +140,7 @@ function ServicesContent() {
                   <ServiceCard
                     title="Interior Design and Spatial Planning"
                     description="We offer interior design services that complement the architectural design, focusing on layouts, materials, color schemes, and finishes to create functional, comfortable, and visually harmonious interiors."
-                    imageUrl="/Renders/Clubhouse/Ernika/ernika_1.png"
+                    imageUrl="/services/001 architecture and interior design/003 interior and spatial design/pantry_office_collab.png"
                     
                     index={2}
                     detailedContent={{
@@ -160,7 +160,7 @@ function ServicesContent() {
                   <ServiceCard
                     title="Facade and Elevation Design"
                     description="Our expertise includes designing striking facades and elevations, considering both aesthetics and environmental factors, to create visually dynamic buildings that blend with their surroundings."
-                    imageUrl="/Renders/Entrance_Arch/Eternia/1.jpg"
+                    imageUrl="/services/001 architecture and interior design/004 facade and elevation design/Deepa_4.png"
                     
                     index={3}
                     detailedContent={{
@@ -180,7 +180,7 @@ function ServicesContent() {
                   <ServiceCard
                     title="3D Visualization and Renderings"
                     description="We provide realistic 3D models and renderings to help clients visualize the design concepts before construction, ensuring clarity in the design process and facilitating better decision-making."
-                    imageUrl="/Renders/Clubhouse/Eternia/eternia_1.png"
+                    imageUrl="/services/001 architecture and interior design/005 3d visualization and rendering/1.jpg"
                     
                     index={4}
                     detailedContent={{
@@ -200,7 +200,7 @@ function ServicesContent() {
                   <ServiceCard
                     title="Compliance with Local Codes and Regulations"
                     description="We ensure that all architectural designs meet local zoning regulations, building codes, and safety standards. We also handle the necessary approvals and permits for the project."
-                    imageUrl="/Renders/Entrance_Arch/Etasha/1.jpeg"
+                    imageUrl="/services/001 architecture and interior design/006 compliance with local codes and regulations/AdobeStock_451953465-scaled.jpeg"
                     
                     index={5}
                     detailedContent={{
@@ -234,28 +234,28 @@ function ServicesContent() {
                   <ServiceCard
                     title="Residential and Commercial Buildings"
                     description="Design of safe, efficient, and cost-effective structural systems for both residential and commercial properties, including multi-story buildings, villas, townhouses, Entrance Arches, and Water tanks."
-                    imageUrl="/Renders/Entrance_Arch/Ernika/2.png"
+                    imageUrl="/services/002 structural design/001 residential and commercial/file_2025-08-23_08.18.09.png"
                     index={0}
                   />
 
                   <ServiceCard
                     title="Structural Systems Integration"
                     description="Efficient integration of structural systems with mechanical, electrical, and plumbing systems to ensure a cohesive design that supports the functionality of the building."
-                    imageUrl="/Renders/water_tank/1.jpeg"
+                    imageUrl="/services/002 structural design/002 structural systems integration/file_2025-08-23_06.19.19.png"
                     index={1}
                   />
 
                   <ServiceCard
                     title="Site-Specific Solutions"
                     description="Customized design solutions based on the specific requirements of the plot, including addressing unique site challenges such as varying topography, seismic zones, and load-bearing capacities."
-                    imageUrl="/Renders/Entrance_Arch/Eternia/2.jpg"
+                    imageUrl="/services/002 structural design/003 site specific solutions/file_2025-08-23_07.59.08.png"
                     index={2}
                   />
 
                   <ServiceCard
                     title="Construction Detailing"
                     description="Preparation of detailed construction drawings, specifications, and structural calculations to guide the construction process and ensure compliance with all building codes."
-                    imageUrl="/Renders/Entrance_Arch/Etasha/2.jpeg"
+                    imageUrl="/services/002 structural design/004 construction detailing/close-up-of-orange-pencil-highlighting-architectural-blueprint-in-a-creative-workspace-free-photo.jpeg"
                     index={3}
                   />
                 </div>
@@ -277,49 +277,49 @@ function ServicesContent() {
                   <ServiceCard
                     title="Custom Landscape Planning"
                     description="Designing functional and visually appealing layouts that complement the natural environment and architecture of the development."
-                    imageUrl="/Renders/Clubhouse/Ernika/ernika_2.png"
+                    imageUrl="/services/003 landscape design/001 custom landscape planning/file_2025-08-23_07.50.26.png"
                     index={0}
                   />
 
                   <ServiceCard
                     title="Hardscape Design"
                     description="Creating durable outdoor elements such as pathways, patios, retaining walls, and fences."
-                    imageUrl="/Renders/Entrance_Arch/Eternia/3.jpg"
+                    imageUrl="/services/003 landscape design/002 hardscape design/istockphoto-1340943704-612x612.jpg"
                     index={1}
                   />
 
                   <ServiceCard
                     title="Softscape Design"
                     description="Selecting and arranging plants, trees, shrubs, and turf to enhance the beauty and sustainability of outdoor spaces."
-                    imageUrl="/Renders/Clubhouse/Eternia/eternia_2.png"
+                    imageUrl="/services/003 landscape design/003 softscape design/istockphoto-1312760160-612x612.jpg"
                     index={2}
                   />
 
                   <ServiceCard
                     title="Irrigation Systems"
                     description="Designing efficient irrigation systems to ensure the long-term health and maintenance of landscapes."
-                    imageUrl="/Renders/water_tank/1.jpeg"
+                    imageUrl="/services/003 landscape design/004 irrigation system/istockphoto-638155104-612x612.jpg"
                     index={3}
                   />
 
                   <ServiceCard
                     title="Lighting Design"
                     description="Adding strategic lighting to highlight key features, improve safety, and create ambiance in outdoor spaces."
-                    imageUrl="/Renders/Clubhouse/Ernika/ernika_3.png"
+                    imageUrl="/services/003 landscape design/005 lighting design/istockphoto-1195765543-612x612.jpg"
                     index={4}
                   />
 
                   <ServiceCard
                     title="Sustainable Practices"
                     description="Integrating eco-friendly practices like water conservation, native plant species, and energy-efficient lighting to create sustainable landscapes."
-                    imageUrl="/Renders/Clubhouse/Eternia/eternia_3.png"
+                    imageUrl="/services/003 landscape design/006 sustainable practice /istockphoto-1412012308-612x612.jpg"
                     index={5}
                   />
 
                   <ServiceCard
                     title="Maintenance Plans"
                     description="Offering tailored maintenance schedules to keep landscapes vibrant and healthy over time."
-                    imageUrl="/Renders/Clubhouse/Ernika/ernika_4.png"
+                    imageUrl="/services/003 landscape design/007 maintenance plan/istockphoto-1184243565-612x612.jpg"
                     index={6}
                   />
                 </div>
@@ -350,35 +350,35 @@ function ServicesContent() {
                   <ServiceCard
                     title="Earthwork and Site Grading"
                     description="We have contributed to a wide range of development projects, including residential, and mixed-use developments. Our scope of work includes utilizing raw survey data to assess existing ground conditions, evaluating architectural layouts for engineering feasibility, and creating site grading plans. We also calculate cut/fill quantities and propose modifications to optimize earthwork efficiency."
-                    imageUrl="/Renders/Entrance_Arch/Ernika/3.png"
+                    imageUrl="/services/004 infrastructure/002 earthworks and site grading/istockphoto-1388912057-612x612.jpg"
                     index={1}
                   />
 
                   <ServiceCard
                     title="Roadway Engineering"
                     description="We have designed both major and minor roads, as well as driveways, for a variety of developments. Our road design process includes planning the horizontal layout, designing horizontal and vertical grades, and creating curves, alignments, and profiles to ensure optimal functionality and safety."
-                    imageUrl="/Renders/Entrance_Arch/Eternia/4.jpg"
+                    imageUrl="/services/004 infrastructure/003 roadway engineering/file_2025-08-23_07.37.48.png"
                     index={2}
                   />
 
                   <ServiceCard
                     title="Traffic Engineering"
                     description="We conduct traffic engineering analysis to design roads and intersections that facilitate smooth vehicular movement within a development. Our services include analyzing and designing master plans to accommodate transit vehicles, service vehicles, and pedestrians. We also implement traffic calming measures for residential neighbourhoods to enhance safety and comfort."
-                    imageUrl="/Renders/Clubhouse/Etasha/Renders/1.2.png"
+                    imageUrl="/services/004 infrastructure/004 traffic engineering/file_2025-08-23_07.40.37.png"
                     index={3}
                   />
 
                   <ServiceCard
                     title="Public Health Engineering"
                     description="We specialize in designing water and sewer distribution/collection networks for mixed-use developments and integrated townships. Our expertise also extends to storm drain system design, based on catchment area evaluations for roads and open spaces. We create comprehensive site utility plans, sanitary sewer, and storm drain layouts."
-                    imageUrl="/Renders/water_tank/1.jpeg"
+                    imageUrl="/services/004 infrastructure/005 public health engineering/file_2025-08-23_07.43.47.png"
                     index={4}
                   />
 
                   <ServiceCard
                     title="Electrical Engineering"
                     description="Our services includes demand assessments, supply and system resilience, utilities consultancy, and sustainable electrical engineering design. Our electrical experts collaborate closely with mechanical and public health engineers to deliver comprehensive building services solutions. Going beyond traditional areas of overlap, our electrical engineers play a creative role, actively contributing to the design process."
-                    imageUrl="/Renders/Clubhouse/Ernika/ernika_5.png"
+                    imageUrl="/services/004 infrastructure/006 electrical/istockphoto-180826359-612x612.jpg"
                     index={5}
                   />
                 </div>
@@ -401,42 +401,42 @@ function ServicesContent() {
                   <ServiceCard
                     title="Plumbing"
                     description="We provide efficient plumbing solutions, including water supply, drainage, and sewage systems, ensuring reliability and compliance with all standards while promoting water conservation."
-                    imageUrl="/Renders/water_tank/1.jpeg"
+                    imageUrl="/services/005 building services/001 plumbing/premium_photo-1683141410787-c4dbd2220487.jpeg"
                     index={0}
                   />
 
                   <ServiceCard
                     title="Fire Fighting"
                     description="Our fire fighting services include the design and installation of fire detection, suppression, and emergency systems, ensuring complete safety and compliance with fire safety regulations."
-                    imageUrl="/Renders/Clubhouse/Ernika/ernika_6.png"
+                    imageUrl="/services/005 building services/002 fire fighting/file_2025-08-23_07.12.42.png"
                     index={1}
                   />
 
                   <ServiceCard
                     title="Electrical"
                     description="We offer safe and energy-efficient electrical systems, including power distribution, lighting, and backup solutions, ensuring all electrical needs are met with reliability and safety."
-                    imageUrl="/Renders/Clubhouse/Etasha/Renders/a.png"
+                    imageUrl="/services/005 building services/003 electrical/file_2025-08-23_07.10.08.png"
                     index={2}
                   />
 
                   <ServiceCard
                     title="Mechanical"
                     description="Our mechanical services include HVAC design, piping, and ventilation systems, focusing on energy efficiency and long-term comfort for residential and commercial spaces."
-                    imageUrl="/Renders/Clubhouse/Eternia/eternia_1.png"
+                    imageUrl="/services/005 building services/004 mechanical/Mechanical-EngineeringME.jpg"
                     index={3}
                   />
 
                   <ServiceCard
                     title="Security"
                     description="We provide integrated security systems, including CCTV, access control, and alarms, to protect your property and enhance safety across all building types."
-                    imageUrl="/Renders/Entrance_Arch/Etasha/3.jpeg"
+                    imageUrl="/services/005 building services/005 security/depositphotos_42356555-stock-photo-security-camera-and-urban-video.jpg"
                     index={4}
                   />
 
                   <ServiceCard
                     title="Communication"
                     description="Our communication services include telecommunication, networking, and public address systems, ensuring seamless connectivity and efficient communication within your development."
-                    imageUrl="/Renders/Clubhouse/Etasha/Renders/entry.png"
+                    imageUrl="/services/005 building services/006 communication/istockphoto-1127447341-612x612.jpg"
                     index={5}
                   />
                 </div>
@@ -458,35 +458,35 @@ function ServicesContent() {
                   <ServiceCard
                     title="Structural Construction"
                     description="Our structural construction services focus on building the core framework of the project, including foundations, floors, walls, and roofs. We use high-quality materials to guarantee the long-term strength and durability of the structure."
-                    imageUrl="/Renders/Entrance_Arch/Ernika/2.png"
+                    imageUrl="/services/006 project execution /001 structural construction/istockphoto-635922448-612x612.jpg"
                     index={0}
                   />
 
                   <ServiceCard
                     title="Mechanical, Electrical, and Plumbing (MEP) Installations"
                     description="We specialize in mechanical, electrical, and plumbing (MEP) installations, ensuring all systems—such as electrical wiring, plumbing, and HVAC—are correctly installed for functionality and comfort in the finished building."
-                    imageUrl="/Renders/Clubhouse/Etasha/Renders/1.2.png"
+                    imageUrl="/services/006 project execution /002 MEP installation/What-is-MEP-engineering.jpg"
                     index={1}
                   />
 
                   <ServiceCard
                     title="Interior and Exterior Finishing"
                     description="Interior and exterior finishing is an essential part of the construction process. From flooring and painting to cladding and facades, we ensure every detail is carefully executed to create aesthetically pleasing and high-quality spaces."
-                    imageUrl="/Renders/Clubhouse/Ernika/ernika_1.png"
+                    imageUrl="/services/006 project execution /003 interior and exterior finishing/42dbf716555fd61fa7c115ceb63d000d.jpg"
                     index={2}
                   />
 
                   <ServiceCard
                     title="Project Management and Coordination"
                     description="Throughout the construction, we provide project management and coordination to ensure smooth execution. Our team oversees scheduling, budgeting, and communication with subcontractors to keep everything on track."
-                    imageUrl="/Renders/Entrance_Arch/Eternia/1.jpg"
+                    imageUrl="/services/006 project execution /004 project management and co-ordination/53f0c2bf34cb0a2e7fe666eec78cfafd.jpg"
                     index={3}
                   />
 
                   <ServiceCard
                     title="Quality Control and Post Construction Services"
                     description="Quality control is a priority for us. We conduct regular inspections to ensure the project meets all building codes and quality standards, delivering a final product that is safe and well-constructed. Once the construction is complete, we provide post-construction services including final inspections and handover to ensure the project meets client expectations, with ongoing support if needed."
-                    imageUrl="/Renders/Clubhouse/Eternia/eternia_3.png"
+                    imageUrl="/services/006 project execution /005 Quality control and post construction services/inspection-site-management-tablet-iStock-1405772906.jpg"
                     index={4}
                   />
                 </div>
