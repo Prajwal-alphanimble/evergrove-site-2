@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { TextReveal } from "@/components/ui/text-reveal"
 import { Sparkles } from "@/components/ui/sparkles"
 import { Particles } from "@/components/ui/particles"
-import { ArrowRight, MapPin, Home, Layers, Building2, Users, Leaf as LeafIcon, Waves as WavesIcon, TreePine as TreePineIcon, Zap as ZapIcon } from "lucide-react"
+import { ArrowRight, MapPin, Home, Layers, Building2, Users, Leaf as LeafIcon, Waves as WavesIcon, TreePine as TreePineIcon, Zap as ZapIcon, Home as HomeIcon, Briefcase as BriefcaseIcon } from "lucide-react"
 import { useRouter } from "next/navigation"
 import GalleryModal from "./GalleryModal"
 import { ComponentType } from "react"
@@ -18,6 +18,8 @@ const ICON_MAP: Record<string, ComponentType<{className?: string}>> = {
   Waves: WavesIcon,
   TreePine: TreePineIcon,
   Zap: ZapIcon,
+  Home: HomeIcon,
+  Briefcase: BriefcaseIcon,
 }
 
 type LayoutProject = {
@@ -45,26 +47,57 @@ type ClubhouseProject = {
   images: string[]
 }
 
+type ResidentialProject = {
+  id: number
+  name: string
+  siteArea: string
+  builtArea: string
+  location: string
+  year: string
+  theme: string
+  icon: string
+  color: string
+  description: string
+  images: string[]
+}
+
+type CommercialProject = {
+  id: number
+  name: string
+  builtArea: string
+  location: string
+  year: string
+  theme: string
+  icon: string
+  color: string
+  description: string
+  images: string[]
+}
+
 export default function ProjectsClient({
   layoutProjects,
   clubhouseProjects,
+  residentialProjects,
+  commercialProjects,
 }: {
   layoutProjects: LayoutProject[]
   clubhouseProjects: ClubhouseProject[]
+  residentialProjects: ResidentialProject[]
+  commercialProjects: CommercialProject[]
 }) {
   const router = useRouter()
-  const [activeTab, setActiveTab] = useState<"layouts" | "clubhouses">("layouts")
+  const [activeTab, setActiveTab] = useState<"layouts" | "clubhouses" | "residential" | "commercial">("layouts")
   const [isMounted, setIsMounted] = useState(false)
   const [galleryModalOpen, setGalleryModalOpen] = useState(false)
-  const [selectedGalleryProject, setSelectedGalleryProject] = useState<LayoutProject | ClubhouseProject | null>(null)
+  const [selectedGalleryProject, setSelectedGalleryProject] = useState<LayoutProject | ClubhouseProject | ResidentialProject | CommercialProject | null>(null)
   const [showTestimonials, setShowTestimonials] = useState(false)
   const reduceMotion = useReducedMotion()
 
   // Sample testimonial data - you can customize this for each project
-  const generateTestimonialData = (project: LayoutProject | ClubhouseProject) => {
+  const generateTestimonialData = (project: LayoutProject | ClubhouseProject | ResidentialProject | CommercialProject) => {
     return project.images.map(() => ({
       name: project.name,
-      designation: project.theme || `${project.area} Development`,
+      designation: project.theme || `${'area' in project ? project.area : 'siteArea' in project ? project.siteArea : 'builtArea' in project ? project.builtArea : 'N/A'} Development`,
       quote: project.description || `Experience luxury living at ${project.name} - a premium development featuring world-class amenities and sustainable design principles.`
     }))
   }
@@ -130,7 +163,7 @@ export default function ProjectsClient({
               <div className="bg-card rounded-2xl p-2 shadow-lg">
                 <button
                   onClick={() => setActiveTab("layouts")}
-                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2${
                     activeTab === "layouts"
                       ? "bg-primary text-white shadow-lg"
                       : "text-muted-foreground hover:text-foreground"
@@ -141,7 +174,7 @@ export default function ProjectsClient({
                 </button>
                 <button
                   onClick={() => setActiveTab("clubhouses")}
-                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2 ${
                     activeTab === "clubhouses"
                       ? "bg-primary text-white shadow-lg"
                       : "text-muted-foreground hover:text-foreground"
@@ -149,6 +182,28 @@ export default function ProjectsClient({
                 >
                   <Users className="inline-block w-5 h-5 mr-2" />
                   Clubhouses
+                </button>
+                <button
+                  onClick={() => setActiveTab("residential")}
+                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2 ${
+                    activeTab === "residential"
+                      ? "bg-primary text-white shadow-lg"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <HomeIcon className="inline-block w-5 h-5 mr-2" />
+                  Residential
+                </button>
+                <button
+                  onClick={() => setActiveTab("commercial")}
+                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2 ${
+                    activeTab === "commercial"
+                      ? "bg-primary text-white shadow-lg"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <BriefcaseIcon className="inline-block w-5 h-5 mr-2" />
+                  Commercial
                 </button>
               </div>
             </motion.div>
@@ -176,6 +231,28 @@ export default function ProjectsClient({
                 >
                   <Users className="inline-block w-5 h-5 mr-2" />
                   Clubhouses
+                </button>
+                <button
+                  onClick={() => setActiveTab("residential")}
+                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+                    activeTab === "residential"
+                      ? "bg-primary text-white shadow-lg"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <HomeIcon className="inline-block w-5 h-5 mr-2" />
+                  Residential
+                </button>
+                <button
+                  onClick={() => setActiveTab("commercial")}
+                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+                    activeTab === "commercial"
+                      ? "bg-primary text-white shadow-lg"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <BriefcaseIcon className="inline-block w-5 h-5 mr-2" />
+                  Commercial
                 </button>
               </div>
             </div>
@@ -381,6 +458,138 @@ export default function ProjectsClient({
 
                     <Button variant="outline" className="w-full rounded-full font-semibold group-hover:bg-primary group-hover:text-white transition-colors bg-transparent">
                       Explore Clubhouse
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
+
+          {/* Residential Projects */}
+          {activeTab === "residential" && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+              {residentialProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={isMounted ? { opacity: 0, y: 60, scale: 0.95 } : { opacity: 1, y: 0, scale: 1 }}
+                  whileInView={isMounted ? { opacity: 1, y: 0, scale: 1 } : {}}
+                  transition={isMounted ? { duration: 0.8, delay: index * 0.15, ease: [0.25, 0.25, 0.25, 0.75] } : {}}
+                  viewport={isMounted ? { once: true, margin: "-100px 0px -100px 0px", amount: 0.2 } : {}}
+                  whileHover={isMounted ? { y: -10 } : {}}
+                  className="bg-card rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+                  onClick={() => {
+                    setSelectedGalleryProject(project)
+                    setGalleryModalOpen(true)
+                    setShowTestimonials(true)
+                  }}
+                >
+                  {/* Image Gallery */}
+                  <div className="relative h-64 overflow-hidden">
+                    <div className="grid grid-cols-2 h-full gap-1">
+                      {project.images.slice(0, 4).map((image, imgIndex) => (
+                        <div key={imgIndex} className="relative overflow-hidden">
+                          <Image src={image || "/placeholder.svg"} alt={`${project.name} ${imgIndex + 1}`} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className={`absolute top-4 left-4 px-3 py-1 rounded-full bg-gradient-to-r ${project.color} text-white text-sm font-semibold`}>
+                      {project.siteArea}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-8">
+                    <h3 className="font-display text-2xl font-bold text-foreground mb-2">{project.name}</h3>
+                    <p className="text-primary font-semibold mb-4">{project.theme}</p>
+
+                    <p className="text-muted-foreground leading-relaxed mb-6 line-clamp-4">{project.description}</p>
+
+                    {/* Project Details */}
+                    <div className="mb-6 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">{project.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Home className="w-4 h-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Built up: {project.builtArea}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Layers className="w-4 h-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Year: {project.year}</span>
+                      </div>
+                    </div>
+
+                    <Button variant="outline" className="w-full rounded-full font-semibold group-hover:bg-primary group-hover:text-white transition-colors bg-transparent">
+                      View Project
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
+
+          {/* Commercial Projects */}
+          {activeTab === "commercial" && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+              {commercialProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={isMounted ? { opacity: 0, y: 60, scale: 0.95 } : { opacity: 1, y: 0, scale: 1 }}
+                  whileInView={isMounted ? { opacity: 1, y: 0, scale: 1 } : {}}
+                  transition={isMounted ? { duration: 0.8, delay: index * 0.15, ease: [0.25, 0.25, 0.25, 0.75] } : {}}
+                  viewport={isMounted ? { once: true, margin: "-100px 0px -100px 0px", amount: 0.2 } : {}}
+                  whileHover={isMounted ? { y: -10 } : {}}
+                  className="bg-card rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+                  onClick={() => {
+                    setSelectedGalleryProject(project)
+                    setGalleryModalOpen(true)
+                    setShowTestimonials(true)
+                  }}
+                >
+                  {/* Image Gallery */}
+                  <div className="relative h-64 overflow-hidden">
+                    <div className="grid grid-cols-2 h-full gap-1">
+                      {project.images.slice(0, 4).map((image, imgIndex) => (
+                        <div key={imgIndex} className="relative overflow-hidden">
+                          <Image src={image || "/placeholder.svg"} alt={`${project.name} ${imgIndex + 1}`} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className={`absolute top-4 left-4 px-3 py-1 rounded-full bg-gradient-to-r ${project.color} text-white text-sm font-semibold`}>
+                      {project.builtArea}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-8">
+                    <h3 className="font-display text-2xl font-bold text-foreground mb-2">{project.name}</h3>
+                    <p className="text-primary font-semibold mb-4">{project.theme}</p>
+
+                    <p className="text-muted-foreground leading-relaxed mb-6 line-clamp-4">{project.description}</p>
+
+                    {/* Project Details */}
+                    <div className="mb-6 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">{project.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Building2 className="w-4 h-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Built up: {project.builtArea}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Layers className="w-4 h-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Year: {project.year}</span>
+                      </div>
+                    </div>
+
+                    <Button variant="outline" className="w-full rounded-full font-semibold group-hover:bg-primary group-hover:text-white transition-colors bg-transparent">
+                      View Project
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </div>
