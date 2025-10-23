@@ -125,6 +125,102 @@ const clubhouseProjects = [
 	},
 ]
 
+const residentialProjects = [
+	{
+		id: 1,
+		name: "Vivid Nest",
+		siteArea: "1200 Sqft",
+		builtArea: "3000 Sqft",
+		location: "Bengaluru, Karnataka",
+		year: "Ongoing",
+		theme: "Modern Minimalist",
+		icon: "Home",
+		color: "from-blue-500 to-purple-600",
+		description:
+			"Crafted with finesse and functionality, this residence exemplifies ingenious design that optimizes space while fostering a harmonious relationship with the outdoors. Discover the seamless integration of balcony connections throughout, offering residents an immersive experience of nature from every vantage point. Ideal for pet enthusiasts, the landscaped courtyard serves as a tranquil oasis for both inhabitants and their furry companions. A focal point of the home, the staircase bay features a captivating skylight with a lovely triple height Landscape courtyard, infusing the interiors with abundant natural light and an airy ambiance. The terrace presents an expansive venue for gatherings. The master bedroom area is complemented by a cozy lounge area, with lower floors dedicated to bedrooms and family room for indoor entertainment. Indulge in the opulence of the master bedroom and bathroom, thoughtfully designed for ultimate relaxation, complete with a luxurious jacuzzi. With nature beckoning from every corner, this residence promises a serene retreat amidst urban living.",
+		images: [
+			"/Renders/Residential/VividNest/3.jpg",
+			"/Renders/Residential/VividNest/11.jpg",
+			"/Renders/Residential/VividNest/12.jpg",
+			"/Renders/Residential/VividNest/Deepa_4.png",
+		],
+	},
+	{
+		id: 2,
+		name: "Courtyard Harmony",
+		siteArea: "4500 Sqft",
+		builtArea: "4850 Sqft",
+		location: "Bengaluru, Karnataka",
+		year: "Ongoing",
+		theme: "Contemporary Courtyard",
+		icon: "Home",
+		color: "from-emerald-500 to-teal-600",
+		description:
+			"The residential project embodies a harmonious blend of modern architecture with a focus on creating spaces wrapped around a courtyard. The concept revolves around enhancing visual connectivity and promoting open planning to foster a sense of unity and spaciousness, while acknowledging the luxurious natural lighting spreading across the spaces through various large openings and the skylight. The solid void planning technique is employed strategically to delineate functionality with overlooking decks and balconies that are seamlessly integrated into the design, providing serene outdoor spaces that overlook lush greenery and offer tranquil retreats for residents. For garden enthusiasts, the design incorporates dedicated spaces that cater to gardening activities, fostering a connection with nature right at home. The overall design philosophy emphasizes creating a living environment that celebrates openness, connectivity, and a deep appreciation for natural elements. Residents can enjoy fluid movement between indoor and outdoor spaces, while the thoughtful layout enhances the quality of life and encourages a holistic lifestyle that embraces both relaxation and social engagement.",
+		images: [
+			"/Renders/Residential/CourtyardHarmony/003.jpg",
+			"/Renders/Residential/CourtyardHarmony/Ashutosh_5.png",
+			"/Renders/Residential/CourtyardHarmony/Ashutosh_Front_3.png",
+			"/Renders/Residential/CourtyardHarmony/IMG_2950.jpg",
+		],
+	},
+	{
+		id: 3,
+		name: "Coastal Retreat",
+		siteArea: "2400 Sqft",
+		builtArea: "3600 Sqft",
+		location: "Udupi, Karnataka",
+		year: "2023",
+		theme: "Mangalore Style",
+		icon: "Home",
+		color: "from-indigo-500 to-blue-600",
+		description:
+			"The project stands as a testament to the successful fusion of traditional Mangalore style architecture with contemporary design principles, resulting in a serene coastal retreat. The two-story layout elegantly divides private spaces on the upper level, offering unparalleled privacy and stunning vistas, while communal areas on the ground floor cater to social gatherings and family activities. This harmonious blend of tradition and modernity culminates in a tranquil haven that celebrates coastal living and fosters a profound connection with nature, enriching the overall living experience for inhabitants. The addition of a deck area provides breathtaking panoramic views of the coastal landscape, serving as an idyllic spot for relaxation and contemplation. Sustainable materials and construction techniques have been meticulously employed throughout, minimizing environmental impact while highlighting the coastal essence through natural textures and colors. The sloped roofs, reminiscent of local heritage, have been expertly crafted to optimize rainwater harvesting, showcasing a sustainable approach. A generous verandah seamlessly connects indoor and outdoor spaces, enhancing connectivity to nature and ensuring ample cross-ventilation for a breathable ambiance.",
+		images: [
+			"/Renders/Residential/CoastalRetreat/1 (1).jpg",
+			"/Renders/Residential/CoastalRetreat/1 (2).jpg",
+			"/Renders/Residential/CoastalRetreat/1 (4).jpg",
+			"/Renders/Residential/CoastalRetreat/1 (5).jpg",
+		],
+	},
+]
+
+const commercialProjects = [
+	{
+		id: 1,
+		name: "Terra",
+		builtArea: "18,000 Sqft",
+		location: "Pune, Maharashtra",
+		year: "Ongoing",
+		theme: "Natural Materials",
+		icon: "Briefcase",
+		color: "from-amber-500 to-orange-600",
+		description:
+			"This project was conceived to move beyond the conventional corporate environment, crafting a workspace that feels open, warm, and deeply connected to its materials and context. Designed for a tech park in Pune, the office draws on natural materials, abundant daylight, and thoughtful ventilation to create spaces that are both dynamic and serene. Key highlights include an inviting reception area designed with natural stone and textured finishes bathed in natural light. Transitional spaces are reimagined with working pods and highlighter ceilings, making movement through the office more interactive and engaging, not just functional. The rich material palette features stone, clay bricks, and breeze blocks, bringing in tactile variety and visual interest. Integration of green elements throughout softens the built environment and creates a sense of calm. This project celebrates the idea that a workplace can be comfortable, vibrant, and reflective of its natural surroundings, offering an experience far beyond the ordinary.",
+		images: [
+			"/Renders/Commercial/Terra/Reception.png",
+			"/Renders/Commercial/Terra/Reception_2.png",
+			"/Renders/Commercial/Terra/pods+toilet+collab.png",
+			"/Renders/Commercial/Terra/pantry_office_collab.png",
+		],
+	},
+	{
+		id: 2,
+		name: "Nuance",
+		builtArea: "2,200 Sqft",
+		location: "Bengaluru, Karnataka",
+		year: "Ongoing",
+		theme: "Collaborative Workspace",
+		icon: "Briefcase",
+		color: "from-purple-500 to-pink-600",
+		description:
+			"A commercial project, where we've expanded and redesigned office spaces to enhance productivity and collaboration. Our extension seamlessly integrates with the existing architecture, creating a fluid transition between spaces. Designed to accommodate a team of nine, the interior layout prioritizes functionality and comfort. Private workstations offer ample space for focused tasks, while common discussion areas foster creativity and teamwork. Additionally, the inclusion of a conference room and two cabins provides privacy for meetings and confidential discussions. We understand the importance of a conducive work environment, which is why we've incorporated dedicated dining areas for staff to unwind and recharge. To bring the outdoors in, planter boxes throughout the office integrate landscape elements promoting a sense of well-being and connection to nature. This project exemplifies our dedication to crafting dynamic workspaces that inspire innovation and collaboration. Step into a realm where design seamlessly merges with functionality, fostering an environment where productivity flourishes and creativity thrives. Welcome to a space where every detail is meticulously considered, ensuring that work becomes a fulfilling experience.",
+		images: [
+			"/Renders/Commercial/Nuance/Render09.png",
+		],
+	},
+]
+
 export default function ProjectsPage() {
-	return <ProjectsClient layoutProjects={layoutProjects} clubhouseProjects={clubhouseProjects} />
+	return <ProjectsClient layoutProjects={layoutProjects} clubhouseProjects={clubhouseProjects} residentialProjects={residentialProjects} commercialProjects={commercialProjects} />
 }
