@@ -246,7 +246,7 @@ export default function AboutClient() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Email Us</h3>
-                    <p className="text-muted-foreground">hello@evergrove.com</p>
+                    <p className="text-muted-foreground">evergrovespaces@gmail.com</p>
                   </div>
                 </div>
 
@@ -256,7 +256,7 @@ export default function AboutClient() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Call Us</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+91 90357 40260</p>
                   </div>
                 </div>
 
@@ -266,7 +266,7 @@ export default function AboutClient() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Visit Us</h3>
-                    <p className="text-muted-foreground">123 Architecture Ave, Design City</p>
+                    <p className="text-muted-foreground">No. 46B, 1st Floor, 4th Cross, 1st Block,<br />3rd Phase, BSK 3rd Stage, Bangalore- 560085</p>
                   </div>
                 </div>
               </motion.div>
