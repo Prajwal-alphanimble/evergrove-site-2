@@ -15,9 +15,12 @@ const layoutProjects = [
 		scope: ["Master Plan", "Entrance Arch", "MEP Services", "Landscape Design"],
 		images: [
 			"/Renders/Master_plan/Eternia/Master_plan/1.jpg",
+			"/Renders/Master_plan/Eternia/Master_plan/2.jpg",
+			"/Renders/Master_plan/Eternia/Master_plan/3.jpg",
 			"/Renders/Entrance_Arch/Eternia/1.jpg",
 			"/Renders/Entrance_Arch/Eternia/2.jpg",
 			"/Renders/Entrance_Arch/Eternia/3.jpg",
+			"/Renders/Entrance_Arch/Eternia/4.jpg",
 		],
 	},
 	{
@@ -35,7 +38,6 @@ const layoutProjects = [
 			"/Renders/Entrance_Arch/Etasha/1.jpeg",
 			"/Renders/Entrance_Arch/Etasha/2.jpeg",
 			"/Renders/Entrance_Arch/Etasha/3.jpeg",
-			"/Renders/Clubhouse/Etasha/Renders/entry.png",
 		],
 	},
 	{
@@ -53,7 +55,6 @@ const layoutProjects = [
 			"/Renders/Entrance_Arch/Ernika/1.png",
 			"/Renders/Entrance_Arch/Ernika/2.png",
 			"/Renders/Entrance_Arch/Ernika/3.png",
-			"/Renders/Clubhouse/Ernika/ernika_1.png",
 		],
 	},
 	{
@@ -72,6 +73,10 @@ const layoutProjects = [
 			"/Renders/Entrance_Arch/Evara/2.png",
 			"/Renders/Entrance_Arch/Evara/3.png",
 			"/Renders/Entrance_Arch/Evara/4.png",
+			"/Renders/Entrance_Arch/Evara/Evara_1.png",
+			"/Renders/Entrance_Arch/Evara/Evara_2.png",
+			"/Renders/Entrance_Arch/Evara/Evara_3.png",
+			"/Renders/Entrance_Arch/Evara/Evara_4.png",
 		],
 	},
 ]
@@ -105,6 +110,14 @@ const clubhouseProjects = [
 			"/Renders/Clubhouse/Etasha/Renders/entry.png",
 			"/Renders/Clubhouse/Etasha/Renders/a.png",
 			"/Renders/Clubhouse/Etasha/Renders/gym_1.png",
+			"/Renders/Clubhouse/Etasha/Renders/gym 2.png",
+			"/Renders/Clubhouse/Etasha/Renders/1.2.png",
+			"/Renders/Clubhouse/Etasha/Renders/3.png",
+			"/Renders/Clubhouse/Etasha/Renders/4.png",
+			"/Renders/Clubhouse/Etasha/Renders/5 (1).png",
+			"/Renders/Clubhouse/Etasha/Renders/6 (1).png",
+			"/Renders/Clubhouse/Etasha/Renders/7 (1).png",
+			"/Renders/Clubhouse/Etasha/Renders/Terrace.png",
 		],
 	},
 	{
@@ -117,10 +130,14 @@ const clubhouseProjects = [
 			"The clubhouse at the Ernika project, Where Nature Meets Contemporary Living is a vibrant, biophilic hub designed to seamlessly blend nature with modern amenities, fostering wellness, community, and connection. Featuring lush greenery throughout, including vertical gardens, stepped balconies, and landscaped terraces, the architecture emphasizes natural light, ventilation, and organic forms through curved walls and layered elevations.",
 		amenities: ["Fully Equipped Gym", "Indoor Games", "Co-working Space", "AMTC Room", "Scenic Terrace Restaurant"],
 		images: [
+			"/Renders/Clubhouse/Ernika/ernika_0.jpg",
 			"/Renders/Clubhouse/Ernika/ernika_1.png",
 			"/Renders/Clubhouse/Ernika/ernika_2.png",
 			"/Renders/Clubhouse/Ernika/ernika_3.png",
 			"/Renders/Clubhouse/Ernika/ernika_4.png",
+			"/Renders/Clubhouse/Ernika/ernika_5.png",
+			"/Renders/Clubhouse/Ernika/ernika_6.png",
+			"/Renders/Clubhouse/Ernika/ernika_7.jpg",
 		],
 	},
 ]
@@ -162,6 +179,7 @@ const residentialProjects = [
 			"/Renders/Residential/CourtyardHarmony/Ashutosh_5.png",
 			"/Renders/Residential/CourtyardHarmony/Ashutosh_Front_3.png",
 			"/Renders/Residential/CourtyardHarmony/IMG_2950.jpg",
+			"/Renders/Residential/CourtyardHarmony/option 16.png",
 		],
 	},
 	{

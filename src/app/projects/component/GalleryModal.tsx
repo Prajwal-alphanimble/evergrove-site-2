@@ -150,6 +150,117 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
     }
   }
 
+  // Mobile Carousel Component
+  const MobileCarousel = () => (
+    <div className="relative w-full h-full flex flex-col">
+      {/* Header with title and close button */}
+      <div className="flex-shrink-0 p-4 bg-black/20">
+        <div className="flex items-center justify-between">
+          <h2 className="text-white font-semibold text-lg truncate">{title}</h2>
+          <button
+            onClick={onClose}
+            className="w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center text-white transition-colors"
+            aria-label="Close gallery"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      {/* Image Display Area */}
+      <div className="relative flex-1 min-h-0">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute inset-0 flex items-center justify-center p-4"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(_, info) => {
+              if (Math.abs(info.offset.x) > SWIPE_THRESHOLD_PX) {
+                if (info.offset.x < 0) nextImage()
+                else prevImage()
+              }
+            }}
+          >
+            <div className="relative w-full h-full max-h-[70vh] max-w-full">
+              <Image
+                src={images?.[currentIndex] || "/placeholder.svg"}
+                alt={`${title} ${currentIndex + 1}`}
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Touch-friendly Navigation Arrows */}
+        <button
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/40 hover:bg-black/60 active:bg-black/80 rounded-full flex items-center justify-center text-white transition-all duration-200 z-10 touch-manipulation"
+          onClick={prevImage}
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="w-7 h-7" />
+        </button>
+        <button
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/40 hover:bg-black/60 active:bg-black/80 rounded-full flex items-center justify-center text-white transition-all duration-200 z-10 touch-manipulation"
+          onClick={nextImage}
+          aria-label="Next image"
+        >
+          <ChevronRight className="w-7 h-7" />
+        </button>
+
+        {/* Swipe Indicator Dots */}
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/30 px-3 py-2 rounded-full">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
+                idx === currentIndex ? "bg-primary scale-125" : "bg-white/40 hover:bg-white/60"
+              }`}
+              aria-label={`Go to image ${idx + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Thumbnail Strip */}
+      <div className="flex-shrink-0 p-4 bg-gradient-to-t from-black/50 to-transparent">
+        <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+          {images.map((thumb, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`relative w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden border-2 transition-all duration-200 touch-manipulation ${
+                idx === currentIndex 
+                  ? "border-primary scale-110 shadow-lg" 
+                  : "border-white/20 opacity-60 hover:opacity-80 hover:border-white/40"
+              }`}
+            >
+              <Image
+                src={thumb || "/placeholder.svg"}
+                alt={`Thumbnail ${idx + 1}`}
+                fill
+                className="object-cover"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Image Counter Badge */}
+      <div className="absolute bottom-24 right-4 bg-black/70 text-white px-3 py-1.5 rounded-full text-sm font-medium">
+        {currentIndex + 1} / {images.length}
+      </div>
+    </div>
+  )
+
   // Ensure selected thumbnail is visible
   useEffect(() => {
     const el = thumbRefs.current[currentIndex]
@@ -180,7 +291,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
       tabIndex={-1}
     >
           <button
-            className="absolute top-4 right-4 z-20 text-muted-foreground hover:text-primary"
+            className="hidden md:block absolute top-4 right-4 z-20 text-muted-foreground hover:text-primary"
             onClick={onClose}
             aria-label="Close gallery"
           >
@@ -190,7 +301,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
           {/* Mode Toggle Button */}
           {testimonialData && testimonialData.length > 0 && onToggleMode && (
             <button
-              className="absolute top-4 right-16 z-20 px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full text-sm font-medium transition-colors"
+              className="hidden md:block absolute top-4 right-16 z-20 px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full text-sm font-medium transition-colors"
               onClick={() => onToggleMode(!showTestimonials)}
               aria-label={showTestimonials ? "Switch to gallery view" : "Switch to testimonials view"}
             >
@@ -198,10 +309,10 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
             </button>
           )}
 
-          {/* Prev button - only show in regular gallery mode */}
+          {/* Prev button - only show in regular gallery mode on desktop */}
           {!showTestimonials && (
             <button
-              className="absolute left-6 z-20 text-white hover:text-primary"
+              className="hidden md:block absolute left-6 z-20 text-white hover:text-primary"
               onClick={prevImage}
               aria-label="Previous image"
             >
@@ -209,8 +320,15 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
             </button>
           )}
 
-          {/* Image Area with testimonials or regular gallery */}
-          {showTestimonials && testimonials.length > 0 ? (
+          {/* Mobile View */}
+          <div className="md:hidden w-full h-full">
+            <MobileCarousel />
+          </div>
+
+          {/* Desktop/Tablet View */}
+          <div className="hidden md:block w-full h-full">
+            {/* Image Area with testimonials or regular gallery */}
+            {showTestimonials && testimonials.length > 0 ? (
             /* Testimonials View */
             <div className="flex-1 w-full max-w-7xl h-[72vh] grid grid-cols-1 gap-12 md:grid-cols-2 items-center px-4">
               {/* Image Stack */}
@@ -294,7 +412,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                 </motion.div>
                 
                 {/* Testimonial Navigation */}
-                <div className="flex gap-4 pt-12 md:pt-0">
+                {/* <div className="flex gap-4 pt-12 md:pt-0">
                   <button
                     onClick={prevImage}
                     className="group/button flex h-10 w-10 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors"
@@ -309,7 +427,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                   >
                     <IconArrowRight className="h-6 w-6 text-white transition-transform duration-300 group-hover/button:-rotate-12" />
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           ) : (
@@ -401,39 +519,40 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
             </motion.div>
           )}
 
-          {/* Next button - only show in regular gallery mode */}
-          {!showTestimonials && (
-            <button
-              className="absolute right-6 text-white hover:text-primary"
-              onClick={nextImage}
-              aria-label="Next image"
-            >
-              <ChevronRight className="w-10 h-10" />
-            </button>
-          )}
-
-          {/* Thumbnails */}
-          <div className="mt-6 flex gap-3 overflow-x-auto no-scrollbar max-w-5xl px-4" aria-label="Image thumbnails">
-            {images.map((thumb, idx) => (
+            {/* Next button - only show in regular gallery mode on desktop */}
+            {!showTestimonials && (
               <button
-                key={idx}
-                ref={(el) => {
-                  thumbRefs.current[idx] = el
-                }}
-                onClick={() => setCurrentIndex(idx)}
-                className={`relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border-2 outline-none focus:ring-2 focus:ring-primary/60 ${
-                  idx === currentIndex ? "border-primary" : "border-transparent opacity-70 hover:opacity-100"
-                }`}
-                aria-label={`Go to image ${idx + 1}`}
+                className="hidden md:block absolute right-6 text-white hover:text-primary"
+                onClick={nextImage}
+                aria-label="Next image"
               >
-                <Image
-                  src={thumb || "/placeholder.svg"}
-                  alt={`Thumbnail ${idx + 1}`}
-                  fill
-                  className="object-cover"
-                />
+                <ChevronRight className="w-10 h-10" />
               </button>
-            ))}
+            )}
+
+            {/* Thumbnails */}
+            <div className="mt-6 flex gap-3 overflow-x-auto no-scrollbar max-w-5xl px-4" aria-label="Image thumbnails">
+              {images.map((thumb, idx) => (
+                <button
+                  key={idx}
+                  ref={(el) => {
+                    thumbRefs.current[idx] = el
+                  }}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border-2 outline-none focus:ring-2 focus:ring-primary/60 ${
+                    idx === currentIndex ? "border-primary" : "border-transparent opacity-70 hover:opacity-100"
+                  }`}
+                  aria-label={`Go to image ${idx + 1}`}
+                >
+                  <Image
+                    src={thumb || "/placeholder.svg"}
+                    alt={`Thumbnail ${idx + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
 
     </motion.div>,

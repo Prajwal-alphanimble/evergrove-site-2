@@ -120,17 +120,16 @@ export default function ProjectsClient({
               transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.25, 0.25, 0.75] }}
               className="text-center"
             >
-              <Sparkles>
-                <TextReveal className="font-display text-6xl md:text-8xl font-bold text-white mb-6">
-                  Our Projects
-                </TextReveal>
-              </Sparkles>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 1, ease: [0.25, 0.25, 0.25, 0.75] }}
-                className="text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed"
-              >
+              <Sparkles>              <TextReveal className="font-display text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-4 sm:mb-6">
+                Our Projects
+              </TextReveal>
+            </Sparkles>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 1, ease: [0.25, 0.25, 0.25, 0.75] }}
+              className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed px-4"
+            >
                 Discover our portfolio of extraordinary developments that redefine luxury living and sustainable design
               </motion.p>
             </motion.div>
@@ -150,53 +149,53 @@ export default function ProjectsClient({
       </section>
 
       {/* Project Categories */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-6 lg:px-8">
+      <section className="py-10 md:py-20 bg-secondary/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tab Navigation */}
           {isMounted ? (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex justify-center mb-16"
+              className="flex justify-center mb-8 md:mb-16 overflow-x-auto"
             >
-              <div className="bg-card rounded-2xl p-2 shadow-lg">
+              <div className="bg-card rounded-2xl p-2 shadow-lg flex flex-nowrap min-w-max">
                 <button
                   onClick={() => setActiveTab("layouts")}
-                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2 ${
+                  className={`px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 mr-2 text-sm sm:text-base whitespace-nowrap ${
                     activeTab === "layouts"
                       ? "bg-primary text-white shadow-lg"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  <Building2 className="inline-block w-5 h-5 mr-2" />
+                  <Building2 className="inline-block w-4 sm:w-5 h-4 sm:h-5 mr-1 sm:mr-2" />
                   Layout Projects
                 </button>
                 <button
                   onClick={() => setActiveTab("clubhouses")}
-                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2 ${
+                  className={`px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 mr-2 text-sm sm:text-base whitespace-nowrap ${
                     activeTab === "clubhouses"
                       ? "bg-primary text-white shadow-lg"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  <Users className="inline-block w-5 h-5 mr-2" />
+                  <Users className="inline-block w-4 sm:w-5 h-4 sm:h-5 mr-1 sm:mr-2" />
                   Clubhouses
                 </button>
                 <button
                   onClick={() => setActiveTab("residential")}
-                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2 ${
+                  className={`px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 mr-2 text-sm sm:text-base whitespace-nowrap ${
                     activeTab === "residential"
                       ? "bg-primary text-white shadow-lg"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  <HomeIcon className="inline-block w-5 h-5 mr-2" />
+                  <HomeIcon className="inline-block w-4 sm:w-5 h-4 sm:h-5 mr-1 sm:mr-2" />
                   Residential
                 </button>
                 <button
                   onClick={() => setActiveTab("commercial")}
-                  className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 mr-2 ${
+                  className={`px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 mr-2 text-sm sm:text-base whitespace-nowrap ${
                     activeTab === "commercial"
                       ? "bg-primary text-white shadow-lg"
                       : "text-muted-foreground hover:text-foreground"

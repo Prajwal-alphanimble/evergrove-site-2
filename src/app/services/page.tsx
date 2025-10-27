@@ -41,10 +41,10 @@ function ServicesContent() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-4">
+            <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4">
               Our <span className="text-gradient">Services</span>
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto px-4">
              Things we offer
             </p>
           </motion.div>
@@ -52,20 +52,20 @@ function ServicesContent() {
       </section>
 
       {/* Services Content */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 lg:px-8">
+      <section className="py-10 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Service Selection */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-4 mb-16"
+            className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 md:mb-16"
           >
             {services.map((service) => (
               <button
                 key={service.id}
                 onClick={() => setSelectedService(service.id)}
-                className={`px-8 py-4 rounded-full font-semibold transition-all duration-300 ${
+                className={`px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${
                   selectedService === service.id
                     ? "bg-primary text-white shadow-lg scale-105"
                     : "bg-secondary hover:bg-secondary/80 text-foreground hover:scale-105"
@@ -85,11 +85,11 @@ function ServicesContent() {
             className="bg-card dark:bg-slate-900/95 rounded-2xl shadow-lg overflow-hidden"
           >
             {selectedService === "architecture-design" ? (
-              <div className="container mx-auto px-4 py-8">
+              <div className="container mx-auto px-4 py-6 md:py-8">
                 {/* Header Section */}
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Architecture & Interior Design</h2>
-                  <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+                <div className="text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Architecture & Interior Design</h2>
+                  <p className="text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto px-4">
                     We offer innovative and sustainable architecture design services tailored to plotted
                     developments and buildings, creating spaces that are both functional and visually appealing.
                   </p>
@@ -219,11 +219,11 @@ function ServicesContent() {
                 </div>
               </div>
             ) : selectedService === "structural-design" ? (
-              <div className="container mx-auto px-4 py-8">
+              <div className="container mx-auto px-4 py-6 md:py-8">
                 {/* Header Section */}
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Structural Design</h2>
-                  <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+                <div className="text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Structural Design</h2>
+                  <p className="text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto px-4">
                     We offer comprehensive structural design services tailored to both plotted developments and
                     buildings, ensuring safety, durability, and aesthetic appeal.
                   </p>
@@ -261,11 +261,11 @@ function ServicesContent() {
                 </div>
               </div>
             ) : selectedService === "landscape-design" ? (
-              <div className="container mx-auto px-4 py-8">
+              <div className="container mx-auto px-4 py-6 md:py-8">
                 {/* Header Section */}
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Landscape Design</h2>
-                  <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+                <div className="text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Landscape Design</h2>
+                  <p className="text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto px-4">
                     We offer expert landscape design solutions for plotted developments and residential projects.
                     Our services are tailored to enhance outdoor spaces, blending aesthetics with functionality.
                     We handle every aspect of landscape planning, from conceptual design to final implementation.
@@ -325,11 +325,11 @@ function ServicesContent() {
                 </div>
               </div>
             ) : selectedService === "infrastructure" ? (
-              <div className="container mx-auto px-4 py-8">
+              <div className="container mx-auto px-4 py-6 md:py-8">
                 {/* Header Section */}
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Infrastructure Engineering</h2>
-                  <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+                <div className="text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Infrastructure Engineering</h2>
+                  <p className="text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto px-4">
                     We offer comprehensive planning and engineering services across all aspects of infrastructure engineering. 
                     Leveraging our expertise in planning and design, we manage projects from feasibility studies to concept 
                     development, and both preliminary and final design stages. Our collaborative approach is enhanced by advanced 
@@ -384,11 +384,11 @@ function ServicesContent() {
                 </div>
               </div>
             ) : selectedService === "building-services" ? (
-              <div className="container mx-auto px-4 py-8">
+              <div className="container mx-auto px-4 py-6 md:py-8">
                 {/* Header Section */}
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Building Services & Water Resource Management</h2>
-                  <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+                <div className="text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Building Services & Water Resource Management</h2>
+                  <p className="text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto px-4">
                     We provide effective design services for utilities including electric, HVAC, gas, water, sewer,
                     telephone, fiber optic, and cable lines. We also provide water resource services. By leveraging
                     cutting-edge technologies and a creative problem-solving approach, we deliver practical, cost-
@@ -442,11 +442,11 @@ function ServicesContent() {
                 </div>
               </div>
             ) : selectedService === "execution" ? (
-              <div className="container mx-auto px-4 py-8">
+              <div className="container mx-auto px-4 py-6 md:py-8">
                 {/* Header Section */}
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Project Execution</h2>
-                  <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+                <div className="text-center mb-8 md:mb-12">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Project Execution</h2>
+                  <p className="text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto px-4">
                     We specialize in delivering comprehensive construction execution services for both plotted
                     developments and buildings. Our team ensures that every project is completed efficiently, to
                     the highest standards of quality, and within the agreed timeline.
