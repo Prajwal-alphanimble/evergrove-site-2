@@ -7,6 +7,7 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogTitle,
 } from '@/components/ui/dialog';
 
 interface ServiceCardProps {
@@ -40,7 +41,7 @@ export function ServiceCard({
         transition={{ duration: 0.5 }}
         className="bg-card text-card-foreground border border-border/30 rounded-lg shadow-sm h-full"
       >
-        <div className="p-8 h-[300px] overflow-y-auto">
+        <div className="p-4 md:p-8 h-auto md:h-[300px] overflow-y-auto">
           <div className="space-y-6">
             <div className="border-b border-border/20 pb-4">
               <h3 className="text-2xl font-semibold text-card-foreground mb-3">{title}</h3>
@@ -109,7 +110,7 @@ export function ServiceCard({
 
   // Image panel component
   const ImagePanel = () => (
-    <div className="w-full md:w-1/2 relative h-[300px] flex-shrink-0">
+    <div className="w-full md:w-1/2 relative h-[200px] md:h-[300px] flex-shrink-0">
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogTrigger asChild>
           <div className="relative h-full cursor-pointer group">
@@ -120,17 +121,6 @@ export function ServiceCard({
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
             
-            {/* Subtle overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-            
-            {/* Title overlay - always visible */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
-              <h3 className="text-2xl font-semibold text-white mb-2">{title}</h3>
-              <p className="text-gray-200 text-sm leading-relaxed line-clamp-2">
-                {description}
-              </p>
-            </div>
-
             {/* Click hint overlay */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="bg-white/90 backdrop-blur-sm rounded-full p-3">
@@ -143,6 +133,7 @@ export function ServiceCard({
         </DialogTrigger>
 
         <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-transparent border-none shadow-none">
+          <DialogTitle className="sr-only">{title} - Service Image</DialogTitle>
           <div className="relative w-full h-full flex items-center justify-center">
             <Image
               src={imageUrl}
@@ -165,7 +156,7 @@ export function ServiceCard({
 
   return (
     <div className={`rounded-xl overflow-hidden bg-card/90 backdrop-blur-sm shadow-xl ring-1 ring-gray-100 dark:ring-white/5 mb-8 ${index % 2 === 1 ? 'ml-auto' : ''}`} style={{maxWidth: '100%'}}>
-      <div className={`flex ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}>
+      <div className={`flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
         <ImagePanel />
         <ContentPanel />
       </div>

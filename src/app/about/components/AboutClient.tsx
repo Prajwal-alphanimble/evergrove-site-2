@@ -69,10 +69,10 @@ export default function AboutClient() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-4">
+            <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4">
               About <span className="text-gradient">EverGrove</span>
             </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto px-4">
               Pioneering architectural excellence through innovation, sustainability, and timeless design
             </p>
           </motion.div>
@@ -80,8 +80,8 @@ export default function AboutClient() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-6 lg:px-8">
+      <section className="py-10 md:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -89,8 +89,8 @@ export default function AboutClient() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center mb-16"
           >
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8">Our Story</h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+            <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 md:mb-8">Our Story</h2>
+            <div className="space-y-4 md:space-y-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
                 Founded with a vision to transform architectural landscapes, EverGrove Spaces represents the perfect
                 fusion of innovative design, sustainable practices, and exceptional craftsmanship. Our journey began
@@ -108,8 +108,8 @@ export default function AboutClient() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-6 lg:px-8">
+      <section className="py-10 md:py-20 bg-secondary/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -117,10 +117,10 @@ export default function AboutClient() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Meet Our <span className="text-gradient">Team</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Our diverse team of architects, designers, and engineers brings together decades of experience and a
               shared passion for creating extraordinary spaces.
             </p>
