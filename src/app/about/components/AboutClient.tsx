@@ -108,7 +108,7 @@ export default function AboutClient() {
       </section>
 
       {/* Team Section */}
-      <section className="py-10 md:py-20 bg-secondary/30">
+      {/* <section className="py-10 md:py-20 bg-secondary/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -155,7 +155,7 @@ export default function AboutClient() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Projects Section */}
       <section className="py-20 bg-background">

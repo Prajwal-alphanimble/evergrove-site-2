@@ -90,17 +90,7 @@ export default function ProjectsClient({
   const [isMounted, setIsMounted] = useState(false)
   const [galleryModalOpen, setGalleryModalOpen] = useState(false)
   const [selectedGalleryProject, setSelectedGalleryProject] = useState<LayoutProject | ClubhouseProject | ResidentialProject | CommercialProject | null>(null)
-  const [showTestimonials, setShowTestimonials] = useState(false)
   const reduceMotion = useReducedMotion()
-
-  // Sample testimonial data - you can customize this for each project
-  const generateTestimonialData = (project: LayoutProject | ClubhouseProject | ResidentialProject | CommercialProject) => {
-    return project.images.map(() => ({
-      name: project.name,
-      designation: project.theme || `${'area' in project ? project.area : 'siteArea' in project ? project.siteArea : 'builtArea' in project ? project.builtArea : 'N/A'} Development`,
-      quote: project.description || `Experience luxury living at ${project.name} - a premium development featuring world-class amenities and sustainable design principles.`
-    }))
-  }
 
   useEffect(() => setIsMounted(true), [])
 
@@ -157,7 +147,7 @@ export default function ProjectsClient({
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex justify-center mb-8 md:mb-16 overflow-x-auto"
+              className="flex justify-center mb-8 md:mb-16 overflow-x-auto p-4"
             >
               <div className="bg-card rounded-2xl p-2 shadow-lg flex flex-nowrap min-w-max">
                 <button
@@ -283,7 +273,6 @@ export default function ProjectsClient({
                       onClick={() => {
                         setSelectedGalleryProject(project)
                         setGalleryModalOpen(true)
-                        setShowTestimonials(true) // Enable testimonials by default
                       }}
                     >
                       <div className="grid grid-cols-2 gap-4">
@@ -386,7 +375,6 @@ export default function ProjectsClient({
                         <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-semibold" onClick={() => {
                           setSelectedGalleryProject(project)
                           setGalleryModalOpen(true)
-                          setShowTestimonials(true) // Enable testimonials by default
                         }}>
                           View Project Details
                           <ArrowRight className="ml-2 w-5 h-5" />
@@ -414,7 +402,6 @@ export default function ProjectsClient({
                   onClick={() => {
                     setSelectedGalleryProject(clubhouse)
                     setGalleryModalOpen(true)
-                    setShowTestimonials(true) // Enable testimonials by default
                   }}
                 >
                   {/* Image Gallery */}
@@ -480,7 +467,6 @@ export default function ProjectsClient({
                   onClick={() => {
                     setSelectedGalleryProject(project)
                     setGalleryModalOpen(true)
-                    setShowTestimonials(true)
                   }}
                 >
                   {/* Image Gallery */}
@@ -546,7 +532,6 @@ export default function ProjectsClient({
                   onClick={() => {
                     setSelectedGalleryProject(project)
                     setGalleryModalOpen(true)
-                    setShowTestimonials(true)
                   }}
                 >
                   {/* Image Gallery */}
@@ -652,10 +637,6 @@ export default function ProjectsClient({
           }}
           images={selectedGalleryProject.images}
           title={selectedGalleryProject.name}
-          testimonialData={generateTestimonialData(selectedGalleryProject)}
-          showTestimonials={showTestimonials}
-          autoplayTestimonials={true}
-          onToggleMode={setShowTestimonials}
         />
       )}
     </div>
